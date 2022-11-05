@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Topbar from './components/topbar/Topbar';
+// import Topbar from './components/topbar/Topbar';
 import Home from './pages/home/Home';
 import Single from './pages/single/Single';
 import Write from './pages/write/Write';
@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Error from './pages/error/Error';
 import UserContext from './context/UserContext';
 import LoadingBar from 'react-top-loading-bar';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   const context = useContext(UserContext);
@@ -18,7 +19,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Topbar />
+        <Navbar />
         <LoadingBar
             color='#f11946' height={3} transitionTime={600}
             progress={progress}
