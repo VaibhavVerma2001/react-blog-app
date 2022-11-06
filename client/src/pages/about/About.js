@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React, { useContext } from 'react';
 import './about.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -19,21 +19,35 @@ import Mypic from '../../img/mypic.jpg';
 import Avatar from '@mui/material/Avatar';
 import CardHeader from '@mui/material/CardHeader';
 import UserContext from '../../context/UserContext';
+import { motion } from 'framer-motion';
 
 function Cards() {
     const context = useContext(UserContext);
-    const {mode} = context;
+    const { mode } = context;
 
     return (
-        <div className={`cards container-fluid row theme-${mode}`}>
-            <h2 className="aboutHead">What can you do here?</h2>
-            <p className="aboutHeadAns">Here is the step by step guide you may follow to use this site.</p>
+        <motion.div
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 1 }}
+            className={`cards container-fluid row theme-${mode}`}
+        >
+            <motion.div
+                whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.6 }}
+            >
+                <h2 className="aboutHead">What can you do here?</h2>
+                <p className="aboutHeadAns">Here is the step by step guide you may follow to use this site.</p>
+            </motion.div>
 
 
-            <div className='col-md-6'>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }} div
+                className='col-md-6'
+            >
                 <Card className={`card theme-${mode}`}>
                     <CardActionArea>
-                        <CardHeader  style={{color:"#d49837"}}
+                        <CardHeader style={{ color: "#d49837" }}
                             avatar={
                                 <Avatar aria-label="recipe">
                                     {/* V */}
@@ -41,7 +55,7 @@ function Cards() {
                                 </Avatar>
                             }
                             title="Vaibhav Verma"
-                            subheader="October 24, 2022" 
+                            subheader="October 24, 2022"
                         />
                         <CardMedia className='cardimg'
                             component="img"
@@ -59,13 +73,17 @@ function Cards() {
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </div>
+            </motion.div>
 
 
-            <div className='col-md-6'>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }} div
+                className='col-md-6'
+            >
                 <Card className='card'>
                     <CardActionArea>
-                        <CardHeader style={{color:"#d49837"}}
+                        <CardHeader style={{ color: "#d49837" }}
                             avatar={
                                 <Avatar aria-label="recipe">
                                     {/* V */}
@@ -83,21 +101,25 @@ function Cards() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
-                            <span className='aboutDescHead'> 2 - Login with your unique username and password </span>
+                                <span className='aboutDescHead'> 2 - Login with your registered username and password </span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            <span className="aboutDesc"> After logging in successfully, You will be redirected to home page, otherwise you will not be able to access content. </span>
+                                <span className="aboutDesc"> After logging in successfully, You will be redirected to home page, otherwise you will not be able to access content. </span>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </div>
+            </motion.div>
 
 
-            <div className='col-md-6'>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }} div
+                className='col-md-6'
+            >
                 <Card className='card'>
                     <CardActionArea>
-                        <CardHeader style={{color:"#d49837"}}
+                        <CardHeader style={{ color: "#d49837" }}
                             avatar={
                                 <Avatar aria-label="recipe">
                                     {/* V */}
@@ -115,22 +137,26 @@ function Cards() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
-                            <span className='aboutDescHead'> 3 - Home page </span>
+                                <span className='aboutDescHead'> 3 - Home page </span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            <span className="aboutDesc"> On home page you can see post of all the users with there published date, click them to view complete post in seperate page.</span>
+                                <span className="aboutDesc"> On home page you can see post of all the users with there published date, click them to view complete post in seperate page.</span>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </div>
+            </motion.div>
 
 
 
-            <div className='col-md-6'>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }} div
+                className='col-md-6'
+            >
                 <Card className='card'>
                     <CardActionArea>
-                        <CardHeader style={{color:"#d49837"}}
+                        <CardHeader style={{ color: "#d49837" }}
                             avatar={
                                 <Avatar aria-label="recipe">
                                     {/* V */}
@@ -148,22 +174,26 @@ function Cards() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
-                            <span className='aboutDescHead'> 4 - Write/Publish post page </span>
+                                <span className='aboutDescHead'> 4 - Write/Publish post page </span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            <span className="aboutDesc"> Add image, title, description of your post, And publish post then it will be visible on single page and home page. </span>
+                                <span className="aboutDesc"> Add image, title, description of your post, And publish post then it will be visible on single page and home page. </span>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </div>
+            </motion.div>
 
 
 
-            <div className='col-md-6'>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }}
+                className='col-md-6'
+            >
                 <Card className='card'>
                     <CardActionArea>
-                        <CardHeader style={{color:"#d49837"}}
+                        <CardHeader style={{ color: "#d49837" }}
                             avatar={
                                 <Avatar aria-label="recipe">
                                     {/* V */}
@@ -181,22 +211,26 @@ function Cards() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
-                            <span className='aboutDescHead'> 5 - Single post page </span>
+                                <span className='aboutDescHead'> 5 - Single post page </span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            <span className="aboutDesc"> Single post page contains information of clicked post along with it's author name. </span>
+                                <span className="aboutDesc"> Single post page contains information of clicked post along with it's author name. </span>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </div>
+            </motion.div>
 
 
 
-            <div className='col-md-6'>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }} div
+                className='col-md-6'
+            >
                 <Card className='card'>
                     <CardActionArea>
-                        <CardHeader style={{color:"#d49837"}}
+                        <CardHeader style={{ color: "#d49837" }}
                             avatar={
                                 <Avatar aria-label="recipe">
                                     {/* V */}
@@ -214,22 +248,26 @@ function Cards() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
-                            <span className='aboutDescHead'> 6 - Click on author name to see only his posts </span>
+                                <span className='aboutDescHead'> 6 - Click on author name to see only his posts </span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            <span className="aboutDesc"> By clicking on author name you can see all posts those belong to him. </span>
+                                <span className="aboutDesc"> By clicking on author name you can see all posts those belong to him. </span>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </div>
+            </motion.div>
 
 
 
-            <div className='col-md-6'>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }} div
+                className='col-md-6'
+            >
                 <Card className='card'>
                     <CardActionArea>
-                        <CardHeader style={{color:"#d49837"}}
+                        <CardHeader style={{ color: "#d49837" }}
                             avatar={
                                 <Avatar aria-label="recipe">
                                     {/* V */}
@@ -247,22 +285,26 @@ function Cards() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
-                            <span className='aboutDescHead'> 7 - User specific posts </span>
+                                <span className='aboutDescHead'> 7 - User specific posts </span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            <span className="aboutDesc">By clicking on author name you can see all posts those belong to him. </span> 
+                                <span className="aboutDesc">By clicking on author name you can see all posts those belong to him. </span>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </div>
+            </motion.div>
 
 
 
-            <div className='col-md-6'>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }} div
+                className='col-md-6'
+            >
                 <Card className='card'>
                     <CardActionArea>
-                        <CardHeader style={{color:"#d49837"}}
+                        <CardHeader style={{ color: "#d49837" }}
                             avatar={
                                 <Avatar aria-label="recipe">
                                     {/* V */}
@@ -280,22 +322,26 @@ function Cards() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
-                            <span className='aboutDescHead'> 8 - Delete and edit post </span>
+                                <span className='aboutDescHead'> 8 - Delete and edit post </span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            <span className="aboutDesc"> By clicking delete icon, that post will be deleted(Only visible to author). </span>
+                                <span className="aboutDesc"> By clicking delete icon, that post will be deleted(Only visible to author). </span>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </div>
+            </motion.div>
 
 
 
-            <div className='col-md-6'>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }} div
+                className='col-md-6'
+            >
                 <Card className='card'>
                     <CardActionArea>
-                        <CardHeader style={{color:"#d49837"}}
+                        <CardHeader style={{ color: "#d49837" }}
                             avatar={
                                 <Avatar aria-label="recipe">
                                     {/* V */}
@@ -313,22 +359,26 @@ function Cards() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
-                            <span className='aboutDescHead'> 9 - Settings page </span>
+                                <span className='aboutDescHead'> 9 - Settings page </span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            <span className="aboutDesc"> Here you can update your profile pic, username, email id and password. </span>
+                                <span className="aboutDesc"> Here you can update your profile pic, username, email id and password. </span>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </div>
+            </motion.div>
 
 
 
-            <div className='col-md-6'>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }} div
+                className='col-md-6'
+            >
                 <Card className='card'>
                     <CardActionArea>
-                        <CardHeader style={{color:"#d49837"}}
+                        <CardHeader style={{ color: "#d49837" }}
                             avatar={
                                 <Avatar aria-label="recipe">
                                     {/* V */}
@@ -346,16 +396,16 @@ function Cards() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
-                            <span className='aboutDescHead'> 10 - Delete your account </span>
+                                <span className='aboutDescHead'> 10 - Delete your account </span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            <span className="aboutDesc"> Also you can delete your account, by doing this all of your posts will be deleted. </span>
+                                <span className="aboutDesc"> Also you can delete your account, by doing this all of your posts will be deleted. </span>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div >
     )
 }
 

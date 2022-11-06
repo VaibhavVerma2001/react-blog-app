@@ -64,8 +64,8 @@ export default function Write() {
                     />
                     <input
                         type="text" required
-                        placeholder="Title"
-                        className="writeInput"
+                        placeholder="Write title..."
+                        className="writeInput writeTtile"
                         autoFocus={true}
                         onChange={e => setTitle(e.target.value)}
                     />
@@ -74,7 +74,7 @@ export default function Write() {
                     <textarea
                         placeholder="Tell your story..."
                         type="text" required
-                        className="writeInput writeText"
+                        className="writeInput writeText writeDescription"
                         onChange={e => setDesc(e.target.value)}
                     ></textarea>
                 </div>

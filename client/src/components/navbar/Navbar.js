@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import LogoutIcon from '@mui/icons-material/Logout';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import { HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -21,6 +21,7 @@ const Navbar = () => {
 
     const handleLogout = (e) => {
         e.preventDefault();
+        setToggle(false);
         setUser(null);
     }
 
@@ -106,7 +107,7 @@ const Navbar = () => {
             {/* for mobile display */}
             <div className="mob-nav">
                 <div className="navbar-menu">
-                    <HiMenuAlt4 onClick={() => setToggle(true)} />
+                    <i className="fa-solid fa-bars" onClick={() => setToggle(true)} />
 
                     {toggle && (
                         <motion.div
@@ -124,12 +125,16 @@ const Navbar = () => {
                                 <Link className="link hover" to="/about" onClick={() => setToggle(false)}>
                                     ABOUT
                                 </Link>
+                                <Link className="link hover" to="/settings" onClick={() => setToggle(false)}>
+                                    SETTINGS
+                                </Link>
                                 <a className="link hover" href='https://www.linkedin.com/in/vaibhav-verma-21122001/' target={"_blank"} rel="noreferrer" onClick={() => setToggle(false)}>
                                     CONTACT
                                 </a>
 
-                                <span className="bottom-nav">
+                                <Button onClick={handleLogout} className="topLogout link hover" style={{position:"relative",right:"10px"}}>Logout</Button>
 
+                                <span className="bottom-nav">
 
                                     <a href="https://www.linkedin.com/in/vaibhav-verma-21122001/" target={"_blank"} rel="noreferrer" ><i className="topIcon fa-brands fa-linkedin"></i></a>
                                     <a href="https://www.instagram.com/vaibhav_verma21/" target={"_blank"} rel="noreferrer" ><i className="topIcon fa-brands fa-square-instagram"></i></a>
@@ -141,16 +146,21 @@ const Navbar = () => {
                     )}
                 </div>
                 <div className="topRight-mob">
+
+                    {mode === "light" ?
+                        <Button style={{ color: "#0c3b66" }} variant="text" onClick={togglemode}><DarkModeIcon /></Button>
+                        :
+                        <Button style={{ color: "#D9E24F" }} variant="text" onClick={togglemode}><LightModeIcon /></Button>
+                    }
+
                     {/* no profile pic if there is no user , instead login and register*/}
                     {
                         user ? (
                             <>
                                 <Link to="/settings">
-                                    <img className="topImage" src={user.profilePic ? PF + user.profilePic : AddImg} alt="" />
-                                    <i className="topSettingIcon fa-solid fa-gear"></i>
+                                    <img className="topImage" src={user.profilePic ? PF + user.profilePic : AddImg} alt="" style={{marginRight:"10px"}} />
+                                    {/* <i className="topSettingIcon fa-solid fa-gear"></i> */}
                                 </Link>
-
-                                <Button onClick={handleLogout} endIcon={<LogoutIcon />} className="topLogout">Logout</Button>
 
                             </>
                         ) :
@@ -166,15 +176,9 @@ const Navbar = () => {
                                 </ul>
                             )
                     }
-                    {mode === "light" ?
-                        <Button style={{ color: "#0c3b66" }} variant="text" onClick={togglemode}><DarkModeIcon /></Button>
-                        :
-                        <Button style={{ color: "#D9E24F" }} variant="text" onClick={togglemode}><LightModeIcon /></Button>
-                    }
 
                 </div>
             </div>
-
         </nav>
     )
 }

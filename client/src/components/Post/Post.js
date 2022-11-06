@@ -3,6 +3,7 @@ import './post.css';
 import { Link } from 'react-router-dom';
 import { CardActionArea } from '@mui/material';
 import UserContext from '../../context/UserContext';
+import { motion } from 'framer-motion';
 
 
 function Post(props) {
@@ -13,7 +14,11 @@ function Post(props) {
     // make Public folder
     const PF = "http://localhost:5000/images/";
     return (
-        <div className={`post theme-${mode}`}>
+        <motion.div
+            whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+            transition={{ duration: 0.5 }}
+            className={`post theme-${mode}`}
+        >
             <CardActionArea>
                 {/* if no post photo then default */}
                 <Link className='link' to={`/post/${post._id}`}>
@@ -33,7 +38,7 @@ function Post(props) {
                     </div>
                 </Link>
             </CardActionArea>
-        </div>
+        </motion.div>
     )
 }
 

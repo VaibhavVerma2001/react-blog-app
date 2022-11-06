@@ -153,6 +153,7 @@
     .topRight {
         display: none;
     }
+
 }
 
 
@@ -167,7 +168,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #747a83;
+    color: var(--color-primary);
 }
 
 .navbar-menu svg {
@@ -208,7 +209,7 @@
     color: #666779;
     margin: 0.5rem 1rem;
     position: absolute;
-    top:10px;
+    top: 10px;
     right: 10px;
 
 }
@@ -254,7 +255,7 @@
     right: 1%;
 }
 
-.bottom-nav{
+.bottom-nav {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -263,8 +264,9 @@
     left: 8px;
 }
 
+
 @media screen and (min-width : 768px) {
-    .navbar-menu {
+    .navbar-menu,.dark-light-mode {
         display: none;
     }
 

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import './header.css';
 import headerImg from '../../img/header.jpg';
 import UserContext from '../../context/UserContext';
+import {motion} from 'framer-motion';
 
 
 function Header() {
@@ -11,10 +12,14 @@ function Header() {
   return (
     <>
       <div className={`header theme-${mode} container-fluid`} >
-        <div className="headerTitles">
+        <motion.div 
+          whileInView={{ y: [-100, -50, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.5 }}
+          className="headerTitles"
+        >
             <span className='headerTitlesm'>React & Node</span>
             <span className='headerTitlelg'>BLOG</span>
-        </div>
+        </motion.div>
         <img className="headerImg" src={headerImg} alt="Img"  />
       </div>
     </>

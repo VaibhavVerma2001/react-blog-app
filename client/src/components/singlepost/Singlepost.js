@@ -3,6 +3,7 @@ import { useLocation, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './singlepost.css';
 import UserContext from '../../context/UserContext';
+import { motion } from 'framer-motion';
 
 function Singlepost() {
 
@@ -35,7 +36,7 @@ function Singlepost() {
 
   //2 - delete post if this post belongs to current user
   const context = useContext(UserContext);
-  const { user,setProgress,mode } = context;
+  const { user, setProgress, mode } = context;
   const navigate = useNavigate();
 
   const handleDelete = async () => {
@@ -55,7 +56,11 @@ function Singlepost() {
 
 
   return (
-    <div className={`singlepost container-fluid theme-${mode}`}>
+    <motion.div
+      whileInView={{ opacity: [0, 0, 1] }}
+      transition={{ duration: 0.5 }}
+      className={`singlepost container-fluid theme-${mode}`}
+    >
       <div className="singlepostWrapper">
         <img src={singlePost.photo ? PF + singlePost.photo : "https://c4.wallpaperflare.com/wallpaper/405/400/980/winter-snow-sun-light-forest-trees-sunset-wallpaper-preview.jpg"} alt="img" className="singlepostImg" />
 
@@ -84,7 +89,7 @@ function Singlepost() {
           {singlePost.desc}
         </p>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

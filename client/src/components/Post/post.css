@@ -84,3 +84,10 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
+
+@media screen and (max-width:650px) {
+    .post{
+        width: 100%;
+        margin: 0px 0px 50px 5px;
+    }
+}

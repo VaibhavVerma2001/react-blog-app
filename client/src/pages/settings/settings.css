@@ -21,7 +21,7 @@
   padding: 20px;
 }
 
-.settingLabel{
+.settingLabel {
   color: var(--color-label-settings);
 }
 
@@ -102,8 +102,8 @@
   background-color: var(--bgcolor-input-settings);
 }
 
-.settingsForm>input::placeholder{
-  color:var(--color-input-settings);
+.settingsForm>input::placeholder {
+  color: var(--color-input-settings);
 }
 
 .settingsSubmitButton {
@@ -123,5 +123,17 @@
 
 .settingsSubmitButton:hover {
   background-color: rgb(1, 114, 114) !important;
-  transition: .3s ease !important;
+transition: .3s ease !important;
+}
+
+@media screen and (max-width:500px) {
+  .settingsTitleDelete {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+  }
+
+  .settingsTitleUpdate{
+    margin-top: 10px;
+  }
 }
