@@ -40,9 +40,9 @@ const Navbar = () => {
         <nav className={`top theme-${mode}`}>
             <div className="topLeft">
                 <a href="https://www.linkedin.com/in/vaibhav-verma-21122001/" target={"_blank"} rel="noreferrer" ><i className="topIcon fa-brands fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/vaibhav_verma21/" target={"_blank"} rel="noreferrer" ><i className="topIcon fa-brands fa-square-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/vaibhav-verma-21122001/" target={"_blank"} rel="noreferrer" ><i className="topIcon fa-brands fa-square-facebook"></i></a>
                 <a href="https://www.linkedin.com/in/vaibhav-verma-21122001/" target={"_blank"} rel="noreferrer" ><i className="topIcon fa-brands fa-square-twitter"></i></a>
+                <a href="https://www.instagram.com/vaibhav_verma21/" target={"_blank"} rel="noreferrer" ><i className="topIcon fa-brands fa-square-instagram"></i></a>
             </div>
             <div className="topCenter">
                 <ul className="topList">
@@ -107,7 +107,7 @@ const Navbar = () => {
             {/* for mobile display */}
             <div className="mob-nav">
                 <div className="navbar-menu">
-                    <i className="fa-solid fa-bars" onClick={() => setToggle(true)} />
+                    <i style={{marginLeft:"8px",fontSize:"1.4rem"}} className="fa-solid fa-bars" onClick={() => setToggle(true)} />
 
                     {toggle && (
                         <motion.div
